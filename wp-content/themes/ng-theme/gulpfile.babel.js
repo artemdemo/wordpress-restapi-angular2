@@ -3,6 +3,8 @@ import gutil from 'gulp-util';
 import less from 'gulp-less';
 import watch from 'gulp-watch';
 import batch from 'gulp-batch';
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import tsify from 'tsify';
@@ -47,6 +49,13 @@ gulp.task('watch', () => {
     watch('./source/less/*.less', batch(function (events, done) {
         gulp.start('less', done);
     }));
+});
+
+gulp.task('compress', function() {
+    return gulp.src('./dist/bundle.js')
+        .pipe(uglify())
+        .pipe(rename('bundle.min.js'))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['browserify', 'less']);
