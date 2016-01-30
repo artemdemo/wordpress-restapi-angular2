@@ -10,7 +10,7 @@ import {MediaService, IMedia} from '../services/MediaService';
     template: `
         <h2>{{ postItem.title.rendered }}</h2>
         <em class="post-item__date text-muted">{{ postItem.date }}</em>
-        <div class="post-item-excerpt">
+        <div class="post-item-excerpt clearfix">
             <div class="thumbnail
                         post-item-excerpt__thumbnail"
                  *ngIf="media">
