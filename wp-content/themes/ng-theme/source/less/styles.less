@@ -8,9 +8,30 @@
  * @source https://bootswatch.com/slate/bootstrap.min.css
  * @preview https://bootswatch.com/slate/
  */
-@import (inline) './themes/slate.css';
+@import (inline) './vendor/slate.css';
+
+// Overriding theme fonts with Open Sans
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext);
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
 
 .main-header {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.post-item {
+    margin-bottom: 10px;
+}
+    .post-item__date {
+        display: inline-block;
+        margin-bottom: 7px;
+    }
+
+.post-item-excerpt {
+    &__thumbnail {
+        float: left;
+        margin: 0 10px 0 0;
+    }
 }

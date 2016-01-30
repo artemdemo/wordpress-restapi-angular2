@@ -1,6 +1,8 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import less from 'gulp-less';
+import watch from 'gulp-watch';
+import batch from 'gulp-batch';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import tsify from 'tsify';
@@ -39,8 +41,12 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch', () => {
-    gulp.watch('./source/**/*.ts', ['browserify']);
-    gulp.watch('./source/less/*.less', ['less']);
+    watch('./source/**/*.ts', batch(function (events, done) {
+        gulp.start('browserify', done);
+    }));
+    watch('./source/less/*.less', batch(function (events, done) {
+        gulp.start('less', done);
+    }));
 });
 
 gulp.task('build', ['browserify', 'less']);
