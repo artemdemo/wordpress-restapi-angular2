@@ -56,7 +56,7 @@ export class MediaService {
     }
 
     fetchMedia(mediaID: number) {
-        let url = `/wp-json/wp/v2/media/${String(mediaID)}`;
+        let url = `/media/${String(mediaID)}`;
         return this.Http.get(this.UrlService.buildUrl(url))
         .subscribe((res) => {
             let newMedia = res.json();

@@ -28,7 +28,7 @@ export class PostsService {
         this.posts = new Observable(observer =>
             this._postsObserver = observer);
 
-        Http.get(UrlService.buildUrl('/wp-json/wp/v2/posts?context=view'))
+        Http.get(UrlService.buildUrl('/posts?context=view'))
             .subscribe((res) => {
                 this._posts = res.json();
                 this.updatePosts();

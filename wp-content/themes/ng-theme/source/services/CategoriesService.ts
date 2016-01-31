@@ -22,7 +22,7 @@ export class CategoriesService {
         this.categories = new Observable(observer =>
             this._categoriesObserver = observer);
 
-        Http.get(this.UrlService.buildUrl('/wp-json/wp/v2/categories?context=view'))
+        Http.get(this.UrlService.buildUrl('/categories?context=view'))
             .subscribe((res) => {
                 this._categories = res.json();
                 this.updateCategories();
