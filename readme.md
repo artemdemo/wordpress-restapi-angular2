@@ -22,6 +22,7 @@ Yeah, I know, it's (probably) unusual stuff, but why not, since we're going to u
 * Copy the `db.php` file found in the sqlite-integratin plugin folder to `wordpress/wp-content` folder
 * By default sqlite-integratin plugin will create folder `wp-content/database` and will put db there
   You can override it, by I don't see any reason why. It's fine as it is.
+* No need to change `wp-config-sample.php` just rename it to `wp-config.php`
   
 More examples you can find [here](http://dogwood.skr.jp/wordpress/sqlite-integration/)
 

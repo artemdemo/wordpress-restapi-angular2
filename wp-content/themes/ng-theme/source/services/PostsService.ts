@@ -14,6 +14,7 @@ export interface IPost {
     title: IRendered;
     content: IRendered;
     excerpt: IRendered;
+    categories: number[];
     featured_media: number;
 }
 
@@ -45,6 +46,27 @@ export class PostsService {
                             getPostSubscription.unsubscribe();
                         }
                     })
+                }
+            })
+        });
+    }
+
+    getPostsByCategoryID(categoryID: number) {
+        return new Observable(observer => {
+            let getPostsByCategoryIDSubscription = this.posts.subscribe((newPosts: IPost[]) => {
+                if (newPosts && newPosts.hasOwnProperty('length')) {
+                    let postsList: IPost[] = [];
+                    if (categoryID == 0) {
+                        postsList = newPosts
+                    } else {
+                        newPosts.forEach((post: IPost) => {
+                            if (post.categories.indexOf(categoryID) > -1) {
+                                postsList.push(post);
+                            }
+                        });
+                    }
+                    observer.next(postsList);
+                    getPostsByCategoryIDSubscription.unsubscribe();
                 }
             })
         });
