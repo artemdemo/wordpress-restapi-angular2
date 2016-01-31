@@ -4,6 +4,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {PostsList} from './components/PostsList';
 import {MainMenu} from './components/MainMenu';
 import {SinglePost} from './components/SinglePost';
+import {CategoryPosts} from './components/CategoryPosts';
 
 
 @Component({
@@ -25,6 +26,7 @@ import {SinglePost} from './components/SinglePost';
 @RouteConfig([
     { path: '/posts', component: PostsList, as: 'PostsPage', useAsDefault: true },
     { path: '/posts/:postID/', component: SinglePost, name: 'SinglePost' },
+    { path: '/categories/:categoryID/', component: CategoryPosts, name: 'CategoryPosts' },
     { path: '/**', redirectTo: ['PostsPage'] }
 ])
 export class WpApp {

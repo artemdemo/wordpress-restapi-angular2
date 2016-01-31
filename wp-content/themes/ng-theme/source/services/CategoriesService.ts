@@ -24,7 +24,7 @@ export class CategoriesService {
 
         Http.get(this.UrlService.buildUrl('/categories?context=view'))
             .subscribe((res) => {
-                this._categories = res.json();
+                this._categories = this.resetCategories().concat(res.json());
                 this.updateCategories();
             });
     }
@@ -32,5 +32,12 @@ export class CategoriesService {
     updateCategories() {
         this._categoriesObserver.next(this._categories);
     }
+
+    private resetCategories = (): ICategory[] => [{
+        id: 0,
+        count: 0,
+        name: 'All',
+        slug: 'all'
+    }]
 
 }
