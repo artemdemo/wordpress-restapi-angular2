@@ -8,13 +8,14 @@ import {MediaService, IMedia} from '../services/MediaService';
 })
 @View({
     template: `
-        <h2>{{ postItem.title.rendered }}</h2>
+        <h2><a href="#">{{ postItem.title.rendered }}</a></h2>
         <em class="post-item__date text-muted">{{ postItem.date }}</em>
         <div class="post-item-excerpt clearfix">
             <div class="thumbnail
                         post-item-excerpt__thumbnail"
-                 *ngIf="media">
-                <img src="{{ media.media_details.sizes.thumbnail.source_url }}">
+                 [ngClass]="{'post-item-excerpt__thumbnail_show': media}"
+                 *ngIf="postItem.featured_media > 0">
+                <img *ngIf="media" src="{{ media.media_details.sizes.thumbnail.source_url }}">
             </div>
             <div class="post-item-excerpt__text"
                  [innerHTML]="postItem.excerpt.rendered"></div>

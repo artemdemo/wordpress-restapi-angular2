@@ -19,9 +19,7 @@ Template Name: App
 </head>
 <body>
 
-<div class="container">
-    <wp-app>Loading...</wp-app>
-</div>
+<wp-app>Loading...</wp-app>
 
 </body>
 </html>

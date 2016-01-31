@@ -2,6 +2,7 @@ import {Injectable, Inject} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import {IRendered} from './PostsService';
+import {UrlService} from './UrlService';
 
 export interface IMediaDetailsSize {
     width: number;
@@ -41,9 +42,7 @@ export class MediaService {
 
     static mediaMap: IMediaMap = {};
 
-    private baseUrl: string = 'http://localhost/wp-angular2/wp-json/wp/v2/media';
-
-    constructor(@Inject(Http) private Http) {
+    constructor(@Inject(Http) private Http, @Inject(UrlService) private UrlService) {
         this.media = new Observable(observer =>
             this._mediaObserver = observer);
     }
@@ -57,14 +56,12 @@ export class MediaService {
     }
 
     fetchMedia(mediaID: number) {
-        return this.Http.get(this.buildUrl(String(mediaID)))
+        let url = `/wp-json/wp/v2/media/${String(mediaID)}`;
+        return this.Http.get(this.UrlService.buildUrl(url))
         .subscribe((res) => {
             let newMedia = res.json();
             MediaService.mediaMap[String(mediaID)] = newMedia;
             this._mediaObserver.next(newMedia);
         })
     }
-
-    private buildUrl = (url: string) => `${this.baseUrl}/${url}`;
-
 }

@@ -16,6 +16,14 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
     font-family: 'Open Sans', Arial, sans-serif;
 }
 
+.container {
+    max-width: 700px;
+}
+
+.transition() {
+    transition: all 0.5s ease-out;
+}
+
 .main-header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -31,7 +39,49 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
 
 .post-item-excerpt {
     &__thumbnail {
+        .transition();
         float: left;
         margin: 0 10px 0 0;
+        min-width: 160px;
+        min-height: 160px;
+        opacity: 0;
+    }
+    &__thumbnail_show {
+        opacity: 1;
     }
 }
+
+.main-menu {
+    background: #268DBF;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 1px #1A1D21;
+}
+
+.main-menu-list {
+    color: white;
+}
+    .main-menu-list-item {
+        float: left;
+
+        &__link {
+            padding: 5px 10px;
+            display: block;
+        }
+
+        &__link_selected {
+            position: relative;
+        }
+
+        &__link_selected:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #1A1D21;
+        }
+    }

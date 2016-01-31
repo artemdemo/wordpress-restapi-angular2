@@ -46,7 +46,7 @@ gulp.task('watch', () => {
     watch('./source/**/*.ts', batch(function (events, done) {
         gulp.start('browserify', done);
     }));
-    watch('./source/less/*.less', batch(function (events, done) {
+    watch('./source/less/**/*.less', batch(function (events, done) {
         gulp.start('less', done);
     }));
 });
