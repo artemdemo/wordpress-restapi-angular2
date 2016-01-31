@@ -22,6 +22,7 @@ export class PostsList {
         this.postsSubscription = PostsService.posts.subscribe(newPosts => {
             this.posts = newPosts
         });
+        PostsService.updatePosts();
     }
 
     ngOnDestroy() {

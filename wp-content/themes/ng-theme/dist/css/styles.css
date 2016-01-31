@@ -7320,6 +7320,17 @@ h6,
 .post-item-excerpt__thumbnail_show {
   opacity: 1;
 }
+.post-content__thumbnail {
+  transition: all 0.5s ease-out;
+  float: left;
+  margin: 0 10px 0 0;
+  min-width: 300px;
+  min-height: 300px;
+  opacity: 0;
+}
+.post-content__thumbnail_show {
+  opacity: 1;
+}
 .main-menu {
   background: #268DBF;
   margin-bottom: 15px;

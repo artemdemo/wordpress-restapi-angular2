@@ -51,6 +51,20 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
     }
 }
 
+.post-content {
+    &__thumbnail {
+        .transition();
+        float: left;
+        margin: 0 10px 0 0;
+        min-width: 300px;
+        min-height: 300px;
+        opacity: 0;
+    }
+    &__thumbnail_show {
+        opacity: 1;
+    }
+}
+
 .main-menu {
     background: #268DBF;
     margin-bottom: 15px;

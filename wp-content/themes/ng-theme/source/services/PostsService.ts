@@ -20,7 +20,7 @@ export interface IPost {
 @Injectable()
 export class PostsService {
 
-    public posts: Observable<IPost>;
+    public posts: Observable<IPost[]>;
     private _postsObserver: any;
     private _posts: IPost[];
 
@@ -33,6 +33,21 @@ export class PostsService {
                 this._posts = res.json();
                 this.updatePosts();
             });
+    }
+
+    getPost(postID: number) {
+        return new Observable(observer => {
+            let getPostSubscription = this.posts.subscribe((newPosts: IPost[]) => {
+                if (newPosts && newPosts.hasOwnProperty('length')) {
+                    newPosts.forEach((post: IPost) => {
+                        if (post.id == postID) {
+                            observer.next(post);
+                            getPostSubscription.unsubscribe();
+                        }
+                    })
+                }
+            })
+        });
     }
 
     updatePosts() {
