@@ -9,6 +9,8 @@ Yeah, I know, it's (probably) unusual stuff, but why not, since we're going to u
 * Angular 2 (beta)
 * Bootstrap, with custom color scheme
 
+![alt tag](https://github.com/artemdemo/wordpress-restapi-angular2/blob/master/wp-content/themes/ng-theme/screenshot.png)
+
 ## Wordpress configuration
 
 * SQLite Integration https://wordpress.org/plugins/sqlite-integration/
