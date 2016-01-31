@@ -43,3 +43,8 @@ Documentation: http://v2.wp-api.org/
   ```
   $ npm run build && npm run watch
   ```
+  
+3. Minify code
+  ```
+  $ npm run compress
+  ```
