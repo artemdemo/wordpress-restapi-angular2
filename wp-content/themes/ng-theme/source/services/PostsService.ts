@@ -36,6 +36,21 @@ export class PostsService {
             })
     }
 
+    getPost(postID: number) {
+        return new Observable(observer => {
+            let getPostSubscription = this.posts.subscribe((newPosts: IPost[]) => {
+                if (newPosts && newPosts.hasOwnProperty('length')) {
+                    newPosts.forEach((post: IPost) => {
+                        if (post.id == postID) {
+                            observer.next(post);
+                            getPostSubscription.unsubscribe();
+                        }
+                    })
+                }
+            })
+        })
+    }
+
     updatePosts() {
         this._postsObserver.next(this._posts);
     }

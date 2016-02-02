@@ -12,7 +12,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
         <h2><a [routerLink]="['SinglePost', {postID : postItem.id}]">{{ postItem.title.rendered }}</a></h2>
         <em class="post-item__date text-muted">{{ postItem.date }}</em>
         <div class="post-item-excerpt clearfix">
-        
+
             <div class="post-item-excerpt__text"
                  [innerHTML]="postItem.excerpt.rendered"></div>
         </div>

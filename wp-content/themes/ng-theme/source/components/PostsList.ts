@@ -23,7 +23,8 @@ export class PostsList {
     constructor(@Inject(PostsService) private PostsService) {
         this.postsSubscription = PostsService.posts.subscribe(newPosts => {
             this.posts = newPosts
-        })
+        });
+        PostsService.updatePosts();
     }
 
     ngOnDestroy() {
