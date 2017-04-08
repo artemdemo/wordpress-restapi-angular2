@@ -7,15 +7,6 @@ If you interested you can see the previous solution in the branch [v.1.0](https:
 
 I'm using [dockie/lamp](http://github.com/robloach/dockie)
 
-**Features**
-
-* [Dockie](../dockie)
-* [Apache](https://httpd.apache.org/) 2.4.7
-* [PHP](http://php.net/) 5.5.9
-* [MySQL](http://www.mysql.com/) 5.5.37
-* [phpMyAdmin](http://www.phpmyadmin.net/) 4.0.10
-* [Composer](http://getcomposer.org) 1.0.0-alpha8
-
 1. Get last image
     ```
     docker pull dockie/lamp
@@ -31,11 +22,20 @@ I'm using [dockie/lamp](http://github.com/robloach/dockie)
 3. Adding `wordpress` bd - http://localhost:8000/phpmyadmin
 
 4. Copy last [wordpress CMS](https://wordpress.org/download/) to `www` folder
+
+**Backend stack**
+
+* [Dockie](../dockie)
+* [Apache](https://httpd.apache.org/) 2.4.7
+* [PHP](http://php.net/) 5.5.9
+* [MySQL](http://www.mysql.com/) 5.5.37
+* [phpMyAdmin](http://www.phpmyadmin.net/) 4.0.10
+* [Composer](http://getcomposer.org) 1.0.0-alpha8
   
 **MySQL**
 
 Connect on `localhost:3306`, user `root`, password `root`.
 
-## Links to webpack with angular starter
+### Useful links
 
 https://github.com/preboot/angular-webpack
