@@ -9,12 +9,12 @@ I'm using [dockie/lamp](http://github.com/robloach/dockie)
 
 1. Get last image
     ```
-    docker pull dockie/lamp
+    $ docker pull dockie/lamp
     ```
 
 2. Install container
     ```
-    docker run -d -p 8000:80 -p 2200:22 -p 3306:3306 -v $(pwd)/www:/var/www/html:rw dockie/lamp
+    $ docker run -d -p 8000:80 -p 2200:22 -p 3306:3306 -v $(pwd)/www:/var/www/html:rw dockie/lamp
     ```
     
     Site will be available at http://localhost:8000/

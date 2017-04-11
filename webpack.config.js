@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -58,12 +59,22 @@ module.exports = {
 
         new ExtractTextPlugin('./css/styles.css'),
 
-        new CleanWebpackPlugin(['./theme/js'], {
+        new CleanWebpackPlugin([
+            './theme/js',
+            './www/wp-content/themes/restapi-angular'
+        ], {
             verbose: true,
             dry: false,
             root: path.resolve(__dirname, './'),
             exclude: ['.gitignore'],
         }),
+
+        new CopyWebpackPlugin([
+            {
+                from: 'theme',
+                to: '../www/wp-content/themes/restapi-angular',
+            },
+        ]),
 
         // Workaround needed for angular 2 angular/angular#11580
         new ContextReplacementPlugin(
