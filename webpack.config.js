@@ -48,11 +48,6 @@ module.exports = {
         ],
     },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     template: './source/index.html',
-        //     filename: './index.html',
-        // }),
-
         new DefinePlugin({
             ENV: {production: isProduction},
         }),
