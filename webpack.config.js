@@ -1,10 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ContextReplacementPlugin = require('webpack').ContextReplacementPlugin;
 const DefinePlugin = require('webpack').DefinePlugin;
+const path = require('path');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -29,12 +29,8 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(less|css)$/,
-                use: [
-                    'style-loader',
-                    { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'less-loader'
-                ]
+                test: /\.(css|less)$/,
+                loaders: ['to-string-loader', 'css-loader', 'less-loader'],
             },
             {test: /\.(png|gif|jpg)(\?.*$|$)/, loader: 'url-loader?limit=100000&name=images/[hash].[ext]'},
             {test: /\.(json)(\?.*$|$)/, loader: 'json-loader'},
@@ -55,7 +51,6 @@ module.exports = {
         new ExtractTextPlugin('./css/styles.css'),
 
         new CleanWebpackPlugin([
-            './theme/js',
             './www/wp-content/themes/restapi-angular'
         ], {
             verbose: true,

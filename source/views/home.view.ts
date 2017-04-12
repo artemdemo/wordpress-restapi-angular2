@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'home-view',
-    templateUrl: './home.view.html',
-    styleUrls: ['./home.view.less']
+    styles: [require('./home.view.less')],
+    template: `
+        <p>
+            Home Works!
+        </p>
+    `,
 })
 export class HomeView implements OnInit {
 

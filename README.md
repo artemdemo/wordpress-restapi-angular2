@@ -23,6 +23,11 @@ I'm using [dockie/lamp](http://github.com/robloach/dockie)
 
 4. Copy last [wordpress CMS](https://wordpress.org/download/) to `www` folder
 
+5. Build js and css
+    ```
+    $ npm run build
+    ```
+
 **Backend stack**
 
 * [Dockie](../dockie)

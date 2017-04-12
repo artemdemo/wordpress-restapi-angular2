@@ -12,10 +12,12 @@
     <meta name="description" content="<?php bloginfo( 'description' ); ?>" />
     <link href="<?php echo get_template_directory_uri(); ?>/css/styles.css" rel="stylesheet" type="text/css" />
     <script async src="<?php echo get_template_directory_uri(); ?>/js/bundle.js"></script>
+
+    <base href="/">
 </head>
 <body>
 
-<wp-app>Loading...</wp-app>
+<wp-app>Loading...!!</wp-app>
 
 </body>
 </html>

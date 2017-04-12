@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-// import { ApiService } from './shared';
 import { AppComponent } from './app.component';
 import { HomeView } from '../views/home.view';
 import { routing } from './app.routing';
@@ -22,6 +21,6 @@ import { routing } from './app.routing';
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule {
+export default class AppModule {
     constructor(public appRef: ApplicationRef) {}
 }
