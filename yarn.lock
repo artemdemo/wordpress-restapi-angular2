@@ -34,9 +34,9 @@
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-4.0.1.tgz#2d73a4b6c40e18d5cd0bfd1f20222af64a11c11e"
 
-"@types/requirejs@^2.1.29":
-  version "2.1.29"
-  resolved "https://registry.yarnpkg.com/@types/requirejs/-/requirejs-2.1.29.tgz#bc48bc833c079c2c24ba6afbca6d3a03b3f4e2f3"
+"@types/node@^7.0.12":
+  version "7.0.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.12.tgz#ae5f67a19c15f752148004db07cbbb372e69efc9"
 
 abbrev@1:
   version "1.1.0"

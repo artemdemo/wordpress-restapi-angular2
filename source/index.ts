@@ -1,26 +1,32 @@
-/// <reference path="../node_modules/@types/requirejs/index.d.ts" />
+/// <reference path="../node_modules/@types/node/index.d.ts" />
 
-//import { enableProdMode } from '@angular/core';
+// polyfills
 import 'ts-helpers';
 import 'reflect-metadata';
 import 'core-js/client/shim';
-import 'zone.js';
+import 'zone.js/dist/zone';
+
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import AppModule from './app/app.module';
 
-// depending on the env mode, enable prod mode or add debugging modules
-// if (ENV.production === 'production') {
-//     enableProdMode();
-// }
+declare const ENV: {
+    production: boolean;
+};
 
-export function main() {
+if (ENV.production) {
+    enableProdMode();
+} else {
+    Error['stackTraceLimit'] = Infinity;
+    require('zone.js/dist/long-stack-trace-zone');
+}
+
+function deployApp() {
     return platformBrowserDynamic().bootstrapModule(AppModule);
 }
 
-main();
-
-// if (document.readyState === 'complete') {
-//     main();
-// } else {
-//     document.addEventListener('DOMContentLoaded', main);
-// }
+if (document.readyState !== 'loading') {
+    deployApp();
+} else {
+    document.addEventListener('DOMContentLoaded', deployApp);
+}

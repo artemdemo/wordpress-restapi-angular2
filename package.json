@@ -7,6 +7,7 @@
     "start": "npm run watch",
     "watch": "webpack --watch --progress --profile",
     "build": "webpack --progress --profile",
+    "build:prod": "NODE_ENV=\"production\" webpack --progress --profile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -55,7 +56,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@types/requirejs": "^2.1.29",
+    "@types/node": "^7.0.12",
     "to-string-loader": "^1.1.5"
   }
 }
