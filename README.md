@@ -1,7 +1,7 @@
 # Wordpress reastapi Angular (>2)
 
 I'm rewriting this app ground up.
-If you interested you can see the previous solution in the branch [v.1.0](https://github.com/artemdemo/wordpress-restapi-angular2/tree/v.1.0)
+Previous solution is stored in different branch [v.1.0](https://github.com/artemdemo/wordpress-restapi-angular2/tree/v.1.0)
 
 ## Installation dev environment
 
