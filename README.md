@@ -1,7 +1,10 @@
 # Wordpress reastapi Angular (>2)
 
-I'm rewriting this app ground up.
-Previous solution is stored in different branch [v.1.0](https://github.com/artemdemo/wordpress-restapi-angular2/tree/v.1.0)
+:fire: **Important!**
+
+:point_right: I'm _rewriting_ this app ground up.
+
+:hourglass_flowing_sand: Previous solution is stored in different branch: [v.1.0](https://github.com/artemdemo/wordpress-restapi-angular2/tree/v.1.0)
 
 ## Installation dev environment
 
@@ -42,6 +45,12 @@ I'm using [dockie/lamp](http://github.com/robloach/dockie)
 7. Activate theme.
 
 8. Install plugins (message will appear in dashboard after theme will be active).
+
+9. Activate [permalinks](http://localhost:8000/wp-admin/options-permalink.php) of type "Post name".
+   
+Now you should be able to use rest-api, for example to get all posts use link: http://localhost:8000/wp-json/wp/v2/posts
+
+[Documentation for wp rest api](https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/)
 
 
 **CMS**
