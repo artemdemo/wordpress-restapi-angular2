@@ -8,6 +8,9 @@
 
 ## Installation dev environment
 
+**Notice** that I haven't tested it in windows, therefore it could be a problems.
+That said feel free to create a PR if you have good fix.
+
 I'm using [dockie/lamp](http://github.com/robloach/dockie)
 
 1. Get last image.
@@ -37,9 +40,9 @@ I'm using [dockie/lamp](http://github.com/robloach/dockie)
     define('DB_COLLATE', '');
     ```
 
-6. Build js and css
+6. Install packages and build js and css
     ```
-    $ npm run build
+    $ npm i && npm run build
     ```
     
 7. Activate theme.
@@ -52,6 +55,9 @@ Now you should be able to use rest-api, for example to get all posts use link: h
 
 [Documentation for wp rest api](https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/)
 
+**Frontend stack**
+* [Angular](https://angular.io/) 4.0.1
+* [Redux](https://www.npmjs.com/package/redux) 3.6.0
 
 **CMS**
 
@@ -74,4 +80,6 @@ Connect on `localhost:3306`, user `root`, password `root`.
 
 ### Useful links
 
-https://github.com/preboot/angular-webpack
+[starter for Angular v2+ using Webpack](https://github.com/preboot/angular-webpack)
+[Angular 2 — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e)
+[ngrx/store](https://github.com/ngrx/store)
